@@ -7,7 +7,7 @@ class ControlPanel extends React.Component {
     super(props);
 
     this.state = {
-      coinSide: 0,
+      coinSide: undefined,
       headCount: 0,
       tailCount: 0
     };
@@ -32,7 +32,12 @@ class ControlPanel extends React.Component {
 
     return (
       <div>
-        <CoinImage coinSide={flipResult} />
+        {headCount + tailCount === 0 ? (
+          <h2>What to do...</h2>
+        ) : (
+          <CoinImage coinSide={flipResult} />
+        )}
+
         <button onClick={this.flipCoin}>Flip Coin</button>
         <h2>Total coin flips: {headCount + tailCount} </h2>
         <h2>Did good {headCount} many times. </h2>
