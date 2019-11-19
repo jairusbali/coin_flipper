@@ -8,7 +8,7 @@ const CoinImage = ({ coinSide }) => {
   const caption = coinSide === 1 ? "Doing good..." : "Doing evil...";
   return (
     <div>
-      <img src={image} alt={caption} />
+      <img style={{ height: "405px" }} src={image} alt={caption} />
       <h2>{caption}</h2>
     </div>
   );

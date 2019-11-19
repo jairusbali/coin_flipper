@@ -20,6 +20,11 @@ class ControlPanel extends React.Component {
     const result = Math.floor(Math.random() * 2);
     console.log(result);
     this.setState({ coinSide: result });
+    this.setState(currState =>
+      result
+        ? { headCount: currState.headCount + 1 }
+        : { tailCount: currState.tailCount + 1 }
+    );
   }
 
   render() {
